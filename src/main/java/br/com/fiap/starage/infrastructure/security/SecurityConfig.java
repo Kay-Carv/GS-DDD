@@ -28,6 +28,15 @@ public class SecurityConfig {
         return http.csrf(csrf -> csrf.disable())
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(req -> {
+
+                    // liberando a interface do Swagger E o JSON do OpenAPI (com e sem asterisco)
+                    req.requestMatchers(
+                            "/v3/api-docs",
+                            "/v3/api-docs/**",
+                            "/swagger-ui/**",
+                            "/swagger-ui.html"
+                    ).permitAll();
+
                     // Endpoint de login é liberado para todos
                     req.requestMatchers(HttpMethod.POST, "/api/auth/login").permitAll();
 

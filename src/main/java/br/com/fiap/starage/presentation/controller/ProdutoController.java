@@ -50,4 +50,20 @@ public class ProdutoController {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(responseDTO);
     }
+
+    @GetMapping
+    public ResponseEntity<Iterable<ProdutoResponseDTO>> listarTodos() {
+        var lista = produtoRepository.findAll().stream()
+                .map(p -> new ProdutoResponseDTO(
+                        p.getId(),
+                        p.getNome(),
+                        p.getQuantidadeAtual(),
+                        p.getCapacidadeMaxima(),
+                        p.getDataValidade(),
+                        p.verificarStatusEstoque(),
+                        p.isVencido()
+                )).toList();
+
+        return ResponseEntity.ok(lista);
+    }
 }
