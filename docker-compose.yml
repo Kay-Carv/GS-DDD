@@ -1,0 +1,50 @@
+services:
+  # 1. Banco de Dados Relacional (PostgreSQL)
+  postgres:
+    image: postgres:15-alpine
+    container_name: starage-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: starage_user
+      POSTGRES_PASSWORD: starage_password
+      POSTGRES_DB: starage_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  # 2. Banco de Séries Temporais (InfluxDB)
+  influxdb:
+    image: influxdb:2.7-alpine
+    container_name: starage-influx
+    ports:
+      - "8086:8086"
+    environment:
+      DOCKER_INFLUXDB_INIT_MODE: setup
+      DOCKER_INFLUXDB_INIT_USERNAME: admin
+      DOCKER_INFLUXDB_INIT_PASSWORD: starage_admin_password
+      DOCKER_INFLUXDB_INIT_ORG: fiap
+      DOCKER_INFLUXDB_INIT_BUCKET: telemetria_sensores
+      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: starage-super-secret-token
+    volumes:
+      - influxdb_data:/var/lib/influxdb2
+    restart: unless-stopped
+
+  # 3. Broker MQTT (Mosquitto)
+  mosquitto:
+    image: eclipse-mosquitto:2
+    container_name: starage-mqtt
+    ports:
+      - "1883:1883"
+      - "9001:9001" # WebSockets (útil para testar no front-end)
+    volumes:
+      - ./mosquitto/config:/mosquitto/config
+      - mosquitto_data:/mosquitto/data
+      - mosquitto_log:/mosquitto/log
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  influxdb_data:
+  mosquitto_data:
+  mosquitto_log:
