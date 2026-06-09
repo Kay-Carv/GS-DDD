@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="" alt="StarAge Logo" width="64" valign="middle">&nbsp;StarAge
+  <img src="./assets/logo.png" alt="StarAge Logo" width="64" valign="middle">&nbsp;StarAge
 </h1>
 <p align="center">Sistema de Logística e Gestão de Estoque Terra-Lua — Global Solution FIAP 2026</p>
 <p align="center">
@@ -12,7 +12,7 @@
 <br>
 
 <p align="center">
-  <img src="" alt="StarAge — Interface do Dashboard" style="border-radius: 12px; width: 100%; box-shadow: 0 4px 24px rgba(0,0,0,0.3);">
+  <img src="./assets/dashboard.png" alt="StarAge — Interface do Dashboard" style="border-radius: 12px; width: 100%; box-shadow: 0 4px 24px rgba(0,0,0,0.3);">
 </p>
 
 ---
