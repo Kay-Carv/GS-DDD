@@ -58,4 +58,15 @@ public class Produto {
         if (dataValidade == null) return false;
         return LocalDate.now().isAfter(dataValidade) || LocalDate.now().isEqual(dataValidade);
     }
+
+    public Produto() {
+    }
+
+    public Produto(String nome, Armazem armazem, Integer quantidadeAtual, Integer capacidadeMaxima, LocalDate dataValidade) {
+        this.nome = nome;
+        this.armazem = armazem;
+        this.quantidadeAtual = quantidadeAtual;
+        this.capacidadeMaxima = capacidadeMaxima;
+        this.dataValidade = dataValidade;
+    }
 }

@@ -37,4 +37,13 @@ public class Armazem {
         }
         this.ativo = false;
     }
+
+    public Armazem() {
+    }
+
+    public Armazem(String nome, String localizacao, boolean regiaoVulneravel) {
+        this.nome = nome;
+        this.localizacao = localizacao;
+        this.regiaoVulneravel = regiaoVulneravel;
+    }
 }
