@@ -37,6 +37,9 @@ public class DashboardService {
                 .filter(p -> "ATENCAO".equals(p.nivelAlerta()))
                 .count();
 
+        //Debug para ver cada produto e seu status
+        predicoes.forEach(p -> System.out.println("Produto: " + p.nomeProduto() + " | Nível: " + p.nivelAlerta()));
+
         // 4. Filtra a lista para mostrar no painel apenas o que precisa de ação
         List<PredicaoProdutoDTO> alertas = predicoes.stream()
                 .filter(p -> "CRITICO".equals(p.nivelAlerta()) || "ATENCAO".equals(p.nivelAlerta()))
@@ -45,6 +48,6 @@ public class DashboardService {
         // Placeholder para o armazém mais ativo (podemos evoluir essa lógica depois)
         String armazemMaisAtivo = "Consolidado Geral";
 
-        return new DashboardResumoDTO(criticos, atencao, armazemMaisAtivo, alertas);
+        return new DashboardResumoDTO(criticos, atencao, armazemMaisAtivo, alertas, predicoes);
     }
 }

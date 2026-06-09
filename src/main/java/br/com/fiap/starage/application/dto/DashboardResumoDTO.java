@@ -6,6 +6,7 @@ public record DashboardResumoDTO(
         long totalProdutosCriticos,
         long totalProdutosAtencao,
         String nomeArmazemMaisAtivo,
-        List<PredicaoProdutoDTO> alertasImediatos
+        List<PredicaoProdutoDTO> alertasImediatos,
+        List<PredicaoProdutoDTO> estoqueGeral
 ) {
 }
