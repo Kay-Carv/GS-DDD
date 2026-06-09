@@ -31,7 +31,16 @@ O sistema atua centralizando os dados de inventário de múltiplos armazéns esp
 - **Painel de Controle Consolidado:** Dashboard moderno em tempo real focado na experiência do operador de logística espacial.
 
 ---
+### Equipe
 
+|Nome | RM     |
+| --- | ---    |
+| Kayque Carvalho da Silva	|RM: 561189 |
+| Erik Kaiyu Suguiyama 	|RM: 559273 |
+| Lucas Guerreiro 		|RM: 560359 |
+| Guilherme Vital 		|RM: 560073 |
+
+---
 ### 🛠️ Stack Tecnológica
 
 | Camada | Tecnologia | Papel no Sistema |
