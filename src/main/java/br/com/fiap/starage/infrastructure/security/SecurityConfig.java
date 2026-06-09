@@ -41,7 +41,7 @@ public class SecurityConfig {
                     req.requestMatchers(HttpMethod.POST, "/api/auth/login").permitAll();
 
                     //Liberação da predição e Histórico
-                    req.requestMatchers("/api/predicao/**", "/api/historico/**").permitAll();
+                    req.requestMatchers("/api/predicao/**", "/api/historico/**", "/api/dashboard/**").permitAll();
 
                     // Apenas Administradores podem cadastrar/desativar armazéns (RN08)
                     req.requestMatchers(HttpMethod.POST, "/api/armazens").hasRole("ADMINISTRADOR");
