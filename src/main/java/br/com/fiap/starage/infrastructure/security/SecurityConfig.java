@@ -40,6 +40,9 @@ public class SecurityConfig {
                     // Endpoint de login é liberado para todos
                     req.requestMatchers(HttpMethod.POST, "/api/auth/login").permitAll();
 
+                    //Liberação da predição e Histórico
+                    req.requestMatchers("/api/predicao/**", "/api/historico/**", "/api/dashboard/**").permitAll();
+
                     // Apenas Administradores podem cadastrar/desativar armazéns (RN08)
                     req.requestMatchers(HttpMethod.POST, "/api/armazens").hasRole("ADMINISTRADOR");
                     req.requestMatchers(HttpMethod.DELETE, "/api/armazens/**").hasAnyRole("ADMINISTRADOR", "GESTOR_MUNICIPAL");
