@@ -232,20 +232,46 @@ npm run dev
 #### 1. Interface do Dashboard Consolidado
 Exibe os cards informativos de recursos em estado de criticidade, atenção e o status seguro integrado perfeitamente por cores reativas.
 
-```text
+<img width="914" height="499" alt="image" src="https://github.com/user-attachments/assets/e8690955-d7c3-405d-813f-ec762a36c1bd" />
 
-```
 
 #### 2. Documentação da API com Swagger UI
 Visualização dos endpoints configurados e estruturados para testes manuais.
 
-```text
+#### Histórico de produtos
+<img width="908" height="947" alt="image" src="https://github.com/user-attachments/assets/6e982764-6f91-4806-aab7-cc6f6b12ef14" />
 
+
+#### Resumo Dashboard 
+<img width="897" height="670" alt="image" src="https://github.com/user-attachments/assets/22235877-832d-4710-8535-c702d5bc7824" />
+
+#### Resumo de predição de esgotamento de produto
+<img width="894" height="774" alt="image" src="https://github.com/user-attachments/assets/0b576470-adc5-4046-8cab-023fa5205441" />
+
+
+#### 3. Envio de dados via sensor **``MQTTX``**
+Simulação de envio de dados via sensor
+
+#### Requisição via MQTTX
+<img width="979" height="672" alt="image" src="https://github.com/user-attachments/assets/1a7d0cd8-8ab6-4a35-a1e5-c87272fa3bf7" />
+
+```JSON
+starage/armazens/1/sensores
+
+{
+  "armazemId": 1,
+  "produtoId": 1,
+  "quantidadeAtualizada": 98,
+  "temperatura": 3.2
+}
 ```
+<img width="526" height="17" alt="image" src="https://github.com/user-attachments/assets/636c7641-6689-4ac3-b4cf-bf700b38e82e" />
 
-#### 3. Payload de Resposta JSON (Endpoint de Resumo)
-Evidência do contrato de dados retornando com os campos calculados, contagens exatas e arrays estruturados.
+### 4. Consumo de itens via **Scheduler**
 
-```text
+#### O estoque é simulado o consumo automáticamente
+<img width="763" height="54" alt="image" src="https://github.com/user-attachments/assets/5438b975-053b-494b-8cad-aa0b6e952ec4" />
 
-```
+
+
+
